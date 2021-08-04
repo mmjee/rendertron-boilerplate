@@ -1,0 +1,17 @@
+version: "2"
+services:
+  node:
+    build:
+      context: .
+    restart: unless-stopped
+    environment:
+      - RENDERTRON_URL=http://rendertron:3000/render
+  
+  rendertron:
+    build:
+      context: .
+      dockerfile: Dockerfile-rendertron
+    restart: unless-stopped
+    volumes:
+      - ./data/rt_cache/:/cache
+
