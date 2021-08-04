@@ -18,6 +18,5 @@ COPY index.js ./
 
 RUN yarn install
 EXPOSE 80
-ENV NODE_ENV=production
 COPY --from=compiled /app/dist /app/frontend
 CMD ["node", "index.js"]

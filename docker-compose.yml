@@ -6,7 +6,7 @@ services:
     restart: unless-stopped
     environment:
       - RENDERTRON_URL=http://rendertron:3000/render
-  
+
   rendertron:
     build:
       context: .
