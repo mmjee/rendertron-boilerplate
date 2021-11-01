@@ -1,8 +1,11 @@
 const path = require('path')
 const express = require('express')
+const morgan = require('morgan')
 const rendertron = require('rendertron-middleware')
 
 const app = express()
+
+app.use(morgan('combined'))
 
 const STATIC = path.resolve(__dirname, '/app/frontend')
 const INDEX = path.resolve(STATIC, 'index.html')
