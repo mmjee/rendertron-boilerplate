@@ -8,7 +8,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "morgan": "^1.10.0",
-    "rendertron-middleware": "^0.1.5"
+    "pupperender": "^3.0.1"
   },
   "devDependencies": {
     "eslint": "^7.32.0",
