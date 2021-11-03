@@ -5,7 +5,9 @@ const rendertron = require('rendertron-middleware')
 
 const app = express()
 
-app.use(morgan('combined'))
+if (process.env.RBP_DISABLE_LOGGING !== 'true') {
+  app.use(morgan('combined'))
+}
 app.set('trust proxy', 1)
 
 const STATIC = path.resolve(__dirname, '/app/frontend')
