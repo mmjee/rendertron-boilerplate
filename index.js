@@ -14,7 +14,10 @@ const STATIC = path.resolve(__dirname, '/app/frontend')
 const INDEX = path.resolve(STATIC, 'index.html')
 const port = process.env.HTTP_PORT ? Number(process.env.HTTP_PORT) : 80
 
-app.use(express.static(STATIC))
+// Let index be handled at line 24
+app.use(express.static(STATIC, {
+  index: false
+}))
 app.use(rendertron.makeMiddleware({
   proxyUrl: process.env.RENDERTRON_URL
 }))
